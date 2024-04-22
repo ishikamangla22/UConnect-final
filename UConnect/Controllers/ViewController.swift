@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var ishika = false
     
     @IBOutlet weak var LogInButton: UIButton!
     
