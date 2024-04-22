@@ -41,10 +41,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2EF8E02BD6B72F008E5EA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F2EF8E12BD6B738008E5EA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F2EF8E52BD6B850008E5EA9 /* Storyboards */,
+				3F83BAC12BCF8C9A00A9DBD2 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3F2EF8E22BD6B73F008E5EA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F18DAC32BD00B2B00B9B49F /* LoginTableViewController.swift */,
+				3F83BABC2BCF8C9900A9DBD2 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3F2EF8E32BD6B76E008E5EA9 /* Style files */ = {
+			isa = PBXGroup;
+			children = (
+				3F9CB8B82BD0472A002D2355 /* LightGrayPlaceholderTextField.swift */,
+			);
+			path = "Style files";
+			sourceTree = "<group>";
+		};
+		3F2EF8E42BD6B7C1008E5EA9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F83BAB82BCF8C9900A9DBD2 /* AppDelegate.swift */,
+				3F83BABA2BCF8C9900A9DBD2 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F2EF8E52BD6B850008E5EA9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3F83BAC32BCF8C9A00A9DBD2 /* LaunchScreen.storyboard */,
+				3F83BABE2BCF8C9900A9DBD2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		3F83BAAC2BCF8C9900A9DBD2 = {
 			isa = PBXGroup;
 			children = (
 				3F83BAB72BCF8C9900A9DBD2 /* UConnect */,
+				3F83BAC62BCF8C9A00A9DBD2 /* Info.plist */,
 				3F83BAB62BCF8C9900A9DBD2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,15 +112,11 @@
 		3F83BAB72BCF8C9900A9DBD2 /* UConnect */ = {
 			isa = PBXGroup;
 			children = (
-				3F83BAB82BCF8C9900A9DBD2 /* AppDelegate.swift */,
-				3F83BABA2BCF8C9900A9DBD2 /* SceneDelegate.swift */,
-				3F83BABC2BCF8C9900A9DBD2 /* ViewController.swift */,
-				3F9CB8B82BD0472A002D2355 /* LightGrayPlaceholderTextField.swift */,
-				3F18DAC32BD00B2B00B9B49F /* LoginTableViewController.swift */,
-				3F83BABE2BCF8C9900A9DBD2 /* Main.storyboard */,
-				3F83BAC12BCF8C9A00A9DBD2 /* Assets.xcassets */,
-				3F83BAC32BCF8C9A00A9DBD2 /* LaunchScreen.storyboard */,
-				3F83BAC62BCF8C9A00A9DBD2 /* Info.plist */,
+				3F2EF8E42BD6B7C1008E5EA9 /* Resources */,
+				3F2EF8E32BD6B76E008E5EA9 /* Style files */,
+				3F2EF8E22BD6B73F008E5EA9 /* Controllers */,
+				3F2EF8E12BD6B738008E5EA9 /* Views */,
+				3F2EF8E02BD6B72F008E5EA9 /* Models */,
 			);
 			path = UConnect;
 			sourceTree = "<group>";
