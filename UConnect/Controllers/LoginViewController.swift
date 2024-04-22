@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  UConnect
 //
-//  Created by student on 17/04/24.
+//  Created by student on 22/04/24.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class LoginViewController: UIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     
@@ -20,16 +20,10 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var createAccuntButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        email.layer.borderWidth = 1
-//        email.layer.borderColor = UIColor.white.cgColor
-//        email.layer.cornerRadius = 10
-//        email.layer.masksToBounds = true
-        
-        // corner Radius
         emailTextField.layer.cornerRadius = 22
         passwordTextField.layer.cornerRadius = 22
         LogInButton.layer.cornerRadius = 22
@@ -54,9 +48,20 @@ class ViewController: UIViewController {
         LogInButton.layer.masksToBounds = true
         createAccuntButton.layer.masksToBounds = true
         
+        
+
         // Do any additional setup after loading the view.
     }
+    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
