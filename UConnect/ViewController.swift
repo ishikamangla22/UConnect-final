@@ -37,8 +37,8 @@ class ViewController: UIViewController {
         // border Color
         emailTextField.layer.borderColor = UIColor.darkGray.cgColor
         passwordTextField.layer.borderColor = UIColor.darkGray.cgColor
-        LogInButton.layer.borderColor = UIColor.white.cgColor
-        createAccuntButton.layer.borderColor = UIColor.white.cgColor
+//        LogInButton.layer.borderColor = UIColor.white.cgColor
+//        createAccuntButton.layer.borderColor = UIColor.white.cgColor
         
         
         // border Width
