@@ -20,9 +20,13 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var createAccuntButton: UIButton!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         emailTextField.layer.cornerRadius = 22
         passwordTextField.layer.cornerRadius = 22
