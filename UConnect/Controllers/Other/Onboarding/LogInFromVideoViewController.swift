@@ -50,7 +50,7 @@ private let loginButton: UIButton = {
     button.setTitle("Log In", for: .normal)
     button.layer.masksToBounds = true
     button.layer.cornerRadius = Constants.cornerRadius
-    button.backgroundColor = .systemBlue
+    button.backgroundColor = UIColor(hex: "#CC0066")
     button.setTitleColor(.white, for: .normal)
     return button
 }()
@@ -248,7 +248,8 @@ class LogInFromVideoViewController: UIViewController {
     
     @objc private func didTapCreateAccountButton() {
         let vc = RegistrationViewController()
-        present(vc, animated: true)
+        vc.title = "Create Account"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
 }
