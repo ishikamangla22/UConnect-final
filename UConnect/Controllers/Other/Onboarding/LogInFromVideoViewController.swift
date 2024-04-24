@@ -219,6 +219,24 @@ class LogInFromVideoViewController: UIViewController {
             if success{
                 //user logged in
                 self.dismiss(animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+                guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarControllerID") as? UITabBarController else {
+                    print("Error: Could not instantiate TabBarController from storyboard.")
+                    return // Exit the function if instantiation fails
+                }
+
+                // Set modalPresentationStyle to fullScreen
+                tabBarController.modalPresentationStyle = .fullScreen
+
+                // Optional: Set the selected tab index (if desired)
+                // tabBarController.selectedIndex = 1 // Set tab at index 1 to be selected
+
+                // Present the tab bar controller from the current view controller
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.present(tabBarController, animated: true, completion: nil)
+                }
             }
             else {
                 // error occured
