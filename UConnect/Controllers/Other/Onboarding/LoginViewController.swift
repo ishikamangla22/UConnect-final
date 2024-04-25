@@ -28,30 +28,30 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         
-        emailTextField.layer.cornerRadius = 22
-        passwordTextField.layer.cornerRadius = 22
-        LogInButton.layer.cornerRadius = 22
-        createAccuntButton.layer.cornerRadius = 22
-        
-        // border Color
-        emailTextField.layer.borderColor = UIColor.darkGray.cgColor
-        passwordTextField.layer.borderColor = UIColor.darkGray.cgColor
-//        LogInButton.layer.borderColor = UIColor.white.cgColor
-//        createAccuntButton.layer.borderColor = UIColor.white.cgColor
-        
-        
-        // border Width
-        emailTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderWidth = 1
-        LogInButton.layer.borderWidth = 1
-        createAccuntButton.layer.borderWidth = 1
-        
-        // Masks To Bound
-        emailTextField.layer.masksToBounds = true
-        passwordTextField.layer.masksToBounds = true
-        LogInButton.layer.masksToBounds = true
-        createAccuntButton.layer.masksToBounds = true
-        
+//        emailTextField.layer.cornerRadius = 22
+//        passwordTextField.layer.cornerRadius = 22
+//        LogInButton.layer.cornerRadius = 22
+//        createAccuntButton.layer.cornerRadius = 22
+//        
+//        // border Color
+//        emailTextField.layer.borderColor = UIColor.darkGray.cgColor
+//        passwordTextField.layer.borderColor = UIColor.darkGray.cgColor
+////        LogInButton.layer.borderColor = UIColor.white.cgColor
+////        createAccuntButton.layer.borderColor = UIColor.white.cgColor
+//        
+//        
+//        // border Width
+//        emailTextField.layer.borderWidth = 1
+//        passwordTextField.layer.borderWidth = 1
+//        LogInButton.layer.borderWidth = 1
+//        createAccuntButton.layer.borderWidth = 1
+//        
+//        // Masks To Bound
+//        emailTextField.layer.masksToBounds = true
+//        passwordTextField.layer.masksToBounds = true
+//        LogInButton.layer.masksToBounds = true
+//        createAccuntButton.layer.masksToBounds = true
+//        
         
 
         // Do any additional setup after loading the view.

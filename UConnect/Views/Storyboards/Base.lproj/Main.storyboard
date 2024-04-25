@@ -282,7 +282,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="labelColor"/>
                         <color key="selectedImageTintColor" red="0.79742074009999997" green="0.15909552569999999" blue="0.4811028242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -314,11 +314,11 @@
             </objects>
             <point key="canvasLocation" x="1486" y="796"/>
         </scene>
-        <!--Add-->
+        <!--Notifications-->
         <scene sceneID="LyM-8b-Sf0">
             <objects>
                 <navigationController id="0dk-mz-Nih" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" id="RBX-Fx-8Ml"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="bell" catalog="system" id="RBX-Fx-8Ml"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iNX-qU-jgX">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -414,10 +414,10 @@
             </objects>
             <point key="canvasLocation" x="1476" y="1594"/>
         </scene>
-        <!--Add Post View Controller-->
+        <!--Notifications View Controller-->
         <scene sceneID="FLE-nB-Jdw">
             <objects>
-                <viewController id="Gir-1i-0W3" customClass="AddPostViewController" customModule="UConnect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gir-1i-0W3" customClass="NotificationsViewController" customModule="UConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thk-nT-4o6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -465,11 +465,14 @@
     </scenes>
     <resources>
         <image name="Screenshot 2024-04-16 at 8.54.52 PM" width="235" height="186.5"/>
-        <image name="message" catalog="system" width="32" height="32"/>
+        <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="message" catalog="system" width="128" height="116"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.3" catalog="system" width="128" height="66"/>
         <image name="person.badge.plus" catalog="system" width="128" height="124"/>
-        <image name="plus" catalog="system" width="32" height="32"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
