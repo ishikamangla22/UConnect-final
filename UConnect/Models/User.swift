@@ -25,16 +25,16 @@ struct User{
     
 }
 
-class UserDataModel {
-    private var users: [User] = []
-    
-    init() {
-        for i in 1..6 {
-            let userId = "\(i)"
-            let userName = "User_\(i)"
-            let userImage = "User\(i)"
-            let userEmailVerified = true
-            
-        }
-    }
-}
+//class UserDataModel {
+//    private var users: [User] = []
+//    
+//    init() {
+//        for i in 1..6 {
+//            let userId = "\(i)"
+//            let userName = "User_\(i)"
+//            let userImage = "User\(i)"
+//            let userEmailVerified = true
+//            
+//        }
+//    }
+//}

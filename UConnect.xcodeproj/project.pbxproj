@@ -40,6 +40,7 @@
 		3F139EEF2BD8169D00C064D7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F139EEE2BD8169D00C064D7 /* StorageManager.swift */; };
 		3F139EF12BD8222600C064D7 /* LogInFromVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F139EF02BD8222600C064D7 /* LogInFromVideoViewController.swift */; };
 		3F139EF32BD8233E00C064D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F139EF22BD8233E00C064D7 /* Extensions.swift */; };
+		3F1BA46B2BE0CC9900F3C746 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BA46A2BE0CC9900F3C746 /* NoteViewController.swift */; };
 		3F2EF8E72BD6BA52008E5EA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF8E62BD6BA52008E5EA9 /* HomeViewController.swift */; };
 		3F2EF8E92BD6BCF8008E5EA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF8E82BD6BCF8008E5EA9 /* LoginViewController.swift */; };
 		3F2EF8EB2BD6BEBA008E5EA9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF8EA2BD6BEBA008E5EA9 /* MessagesViewController.swift */; };
@@ -56,7 +57,6 @@
 		3F2EF9042BD6C57C008E5EA9 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9032BD6C57C008E5EA9 /* PostEditorViewController.swift */; };
 		3F2EF9062BD6C5A5008E5EA9 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9052BD6C5A5008E5EA9 /* PublishPostViewController.swift */; };
 		3F48BB802BDA6B0D004ADC33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB7F2BDA6B0D004ADC33 /* User.swift */; };
-		3F48BB842BDA6E8A004ADC33 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB832BDA6E8A004ADC33 /* Post.swift */; };
 		3F48BB8A2BDA7010004ADC33 /* CommunityMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB892BDA7010004ADC33 /* CommunityMessage.swift */; };
 		3F48BB8C2BDA7053004ADC33 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB8B2BDA7053004ADC33 /* Community.swift */; };
 		3F48BB8E2BDA70C7004ADC33 /* AddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB8D2BDA70C7004ADC33 /* AddPost.swift */; };
@@ -64,12 +64,14 @@
 		3F48BB922BDA70EE004ADC33 /* MemberRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB912BDA70EE004ADC33 /* MemberRequest.swift */; };
 		3F48BB942BDA70FA004ADC33 /* UploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB932BDA70FA004ADC33 /* UploadRequest.swift */; };
 		3F48BB962BDA712B004ADC33 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BB952BDA712B004ADC33 /* Admin.swift */; };
+		3F57DFCE2BE0FAEF003D5051 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57DFCD2BE0FAEF003D5051 /* Post.swift */; };
 		3F83BAB92BCF8C9900A9DBD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F83BAB82BCF8C9900A9DBD2 /* AppDelegate.swift */; };
 		3F83BABB2BCF8C9900A9DBD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F83BABA2BCF8C9900A9DBD2 /* SceneDelegate.swift */; };
 		3F83BAC02BCF8C9900A9DBD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F83BABF2BCF8C9900A9DBD2 /* Base */; };
 		3F83BAC22BCF8C9A00A9DBD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F83BAC12BCF8C9A00A9DBD2 /* Assets.xcassets */; };
 		3F83BAC52BCF8C9A00A9DBD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F83BAC42BCF8C9A00A9DBD2 /* Base */; };
 		3F9CB8B92BD0472A002D2355 /* LightGrayPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CB8B82BD0472A002D2355 /* LightGrayPlaceholderTextField.swift */; };
+		C0B6F36E2BE12312002D5364 /* UploadDetailslViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6F36D2BE12312002D5364 /* UploadDetailslViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,7 @@
 		3F139EEE2BD8169D00C064D7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3F139EF02BD8222600C064D7 /* LogInFromVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInFromVideoViewController.swift; sourceTree = "<group>"; };
 		3F139EF22BD8233E00C064D7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3F1BA46A2BE0CC9900F3C746 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		3F2EF8E62BD6BA52008E5EA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F2EF8E82BD6BCF8008E5EA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F2EF8EA2BD6BEBA008E5EA9 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +98,6 @@
 		3F2EF9032BD6C57C008E5EA9 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		3F2EF9052BD6C5A5008E5EA9 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		3F48BB7F2BDA6B0D004ADC33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		3F48BB832BDA6E8A004ADC33 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3F48BB892BDA7010004ADC33 /* CommunityMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMessage.swift; sourceTree = "<group>"; };
 		3F48BB8B2BDA7053004ADC33 /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		3F48BB8D2BDA70C7004ADC33 /* AddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPost.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		3F48BB912BDA70EE004ADC33 /* MemberRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRequest.swift; sourceTree = "<group>"; };
 		3F48BB932BDA70FA004ADC33 /* UploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRequest.swift; sourceTree = "<group>"; };
 		3F48BB952BDA712B004ADC33 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		3F57DFCD2BE0FAEF003D5051 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3F83BAB52BCF8C9900A9DBD2 /* UConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F83BAB82BCF8C9900A9DBD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F83BABA2BCF8C9900A9DBD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 		3F83BAC42BCF8C9A00A9DBD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F83BAC62BCF8C9A00A9DBD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9CB8B82BD0472A002D2355 /* LightGrayPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGrayPlaceholderTextField.swift; sourceTree = "<group>"; };
+		C0989CC12BE12B51006800CE /* NewPostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewPostDetailsViewController.swift; path = UConnect/Controllers/Other/Onboarding/General/NewPostDetailsViewController.swift; sourceTree = "<group>"; };
+		C0B6F36D2BE12312002D5364 /* UploadDetailslViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadDetailslViewController.swift; path = "../../../../../../../../Desktop/UConnect/UConnect/Controllers/Core Tabs/UploadDetailslViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,11 +171,58 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		3F1BA4642BE0CC3900F3C746 /* Tab files */ = {
+			isa = PBXGroup;
+			children = (
+				3F1BA4692BE0CC7B00F3C746 /* Profile */,
+				3F1BA4682BE0CC7200F3C746 /* Requests */,
+				3F1BA4672BE0CC5D00F3C746 /* Notifications */,
+				3F1BA4662BE0CC5300F3C746 /* Messages */,
+				3F1BA4652BE0CC4800F3C746 /* Home */,
+			);
+			path = "Tab files";
+			sourceTree = "<group>";
+		};
+		3F1BA4652BE0CC4800F3C746 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3F1BA46A2BE0CC9900F3C746 /* NoteViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3F1BA4662BE0CC5300F3C746 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		3F1BA4672BE0CC5D00F3C746 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		3F1BA4682BE0CC7200F3C746 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		3F1BA4692BE0CC7B00F3C746 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		3F2EF8E02BD6B72F008E5EA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				3F48BB7F2BDA6B0D004ADC33 /* User.swift */,
-				3F48BB832BDA6E8A004ADC33 /* Post.swift */,
 				3F48BB892BDA7010004ADC33 /* CommunityMessage.swift */,
 				3F48BB8B2BDA7053004ADC33 /* Community.swift */,
 				3F48BB8D2BDA70C7004ADC33 /* AddPost.swift */,
@@ -178,6 +230,7 @@
 				3F48BB912BDA70EE004ADC33 /* MemberRequest.swift */,
 				3F48BB932BDA70FA004ADC33 /* UploadRequest.swift */,
 				3F48BB952BDA712B004ADC33 /* Admin.swift */,
+				3F57DFCD2BE0FAEF003D5051 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +247,7 @@
 		3F2EF8E22BD6B73F008E5EA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F1BA4642BE0CC3900F3C746 /* Tab files */,
 				3F2EF8F32BD6C391008E5EA9 /* Other */,
 				3F2EF8F22BD6BF03008E5EA9 /* Core Tabs */,
 			);
@@ -237,6 +291,7 @@
 				3F2EF8E62BD6BA52008E5EA9 /* HomeViewController.swift */,
 				3F2EF8EA2BD6BEBA008E5EA9 /* MessagesViewController.swift */,
 				3F2EF8EC2BD6BEC9008E5EA9 /* NotificationsViewController.swift */,
+				C0B6F36D2BE12312002D5364 /* UploadDetailslViewController.swift */,
 				3F2EF8EE2BD6BEDA008E5EA9 /* RequestsViewController.swift */,
 				3F2EF8F02BD6BEE8008E5EA9 /* ProfileViewController.swift */,
 			);
@@ -265,6 +320,7 @@
 		3F83BAAC2BCF8C9900A9DBD2 = {
 			isa = PBXGroup;
 			children = (
+				C0989CC12BE12B51006800CE /* NewPostDetailsViewController.swift */,
 				3F83BAB72BCF8C9900A9DBD2 /* UConnect */,
 				3F83BAB62BCF8C9900A9DBD2 /* Products */,
 			);
@@ -416,12 +472,14 @@
 				3F48BB8C2BDA7053004ADC33 /* Community.swift in Sources */,
 				3F48BB922BDA70EE004ADC33 /* MemberRequest.swift in Sources */,
 				3F2EF8FA2BD6C464008E5EA9 /* EditProfileViewController.swift in Sources */,
+				3F57DFCE2BE0FAEF003D5051 /* Post.swift in Sources */,
 				3F2EF8E72BD6BA52008E5EA9 /* HomeViewController.swift in Sources */,
 				3F48BB8E2BDA70C7004ADC33 /* AddPost.swift in Sources */,
 				3F48BB902BDA70D7004ADC33 /* AddCommunity.swift in Sources */,
-				3F48BB842BDA6E8A004ADC33 /* Post.swift in Sources */,
 				3F139EEB2BD814DC00C064D7 /* DatabaseManager.swift in Sources */,
 				3F2EF8FC2BD6C4A8008E5EA9 /* SettingsViewController.swift in Sources */,
+				C0B6F36E2BE12312002D5364 /* UploadDetailslViewController.swift in Sources */,
+				3F1BA46B2BE0CC9900F3C746 /* NoteViewController.swift in Sources */,
 				3F139EF12BD8222600C064D7 /* LogInFromVideoViewController.swift in Sources */,
 				3F48BB802BDA6B0D004ADC33 /* User.swift in Sources */,
 				3F2EF8ED2BD6BEC9008E5EA9 /* NotificationsViewController.swift in Sources */,

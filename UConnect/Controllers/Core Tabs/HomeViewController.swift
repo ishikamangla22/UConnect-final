@@ -8,27 +8,156 @@
 import FirebaseAuth
 import UIKit
 
-class HomeViewController: UIViewController {
+//class HomeViewController: UIViewController {
+//    
+//    var stackView: UIStackView!
+//    var headingLabel: UILabel!
+////    var segmentedControl: UISegmentedControl!
+//    var addButton: UIButton! // Declare addButton at the class level
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        // Do any additional setup after loading the view.
+//        
+//        setupStackView()
+//        // Initially select the first segment
+////        segmentedControl.selectedSegmentIndex = 0
+//        
+//        // Call a method to set up the "+" button
+//        setupAddButton()
+//    }
+//    
+//    func setupStackView() {
+//        // Initialize the stack view
+//        stackView = UIStackView()
+//        stackView.axis = .vertical
+//        stackView.alignment = .fill
+//        stackView.distribution = .fill
+//        stackView.spacing = 20
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        // Add stack view to the view
+//        view.addSubview(stackView)
+//        
+//        // Set constraints for the stack view
+//        NSLayoutConstraint.activate([
+//            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+//            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+//        ])
+//        
+//        // Call a method to set up the heading label
+//        setupHeadingLabel()
+//        
+//        // Call a method to set up the segmented control
+////        setupSegmentedControl()
+//        
+//        // Add heading label and segmented control to the stack view
+//        stackView.addArrangedSubview(headingLabel)
+////        stackView.addArrangedSubview(segmentedControl)
+//        
+//    }
+//    
+//    
+//    func setupHeadingLabel() {
+//        // Initialize the heading label
+//        headingLabel = UILabel()
+//        headingLabel.text = "Communities"
+//        headingLabel.textAlignment = .left
+//        headingLabel.font = UIFont.boldSystemFont(ofSize: 24)
+//        headingLabel.numberOfLines = 1
+//    }
+//    
+////    func setupSegmentedControl() {
+////        // Initialize segmented control with three segments
+////        segmentedControl = UISegmentedControl(items: ["Joined", "Find", "About"])
+////        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+////    }
+//    
+////    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+////        // Handle value changes here
+////        let selectedIndex = sender.selectedSegmentIndex
+////        print("Selected segment: \(selectedIndex), Title: \(sender.titleForSegment(at: selectedIndex) ?? "")")
+////        
+////        // Perform actions based on selected segment index
+////        switch selectedIndex {
+////        case 0:
+////            // Perform actions for the first segment
+////            print("Joined")
+////            break
+////        case 1:
+////            // Perform actions for the second segment
+////            print("Find")
+////            break
+////        case 2:
+////            // Perform actions for the third segment
+////            print("About")
+////            break
+////        default:
+////            break
+////        }
+////    }
+////    
+//    func setupAddButton() {
+//        // Initialize the add button
+//        addButton = UIButton(type: .custom)
+//        addButton.tintColor = .blue // Set the tint color to blue
+//        addButton.setImage(UIImage(systemName: "plus"), for: .normal) // Use SF Symbols "plus" icon
+//        addButton.addTarget(self, action: #selector(addButtonTapped(_:)), for: .touchUpInside)
+//        
+//        // Add add button to the stack view
+//        stackView.addArrangedSubview(addButton)
+//        addButton.isHidden = true // Initially hide the add button
+//    }
+//    
+//    @objc func addButtonTapped(_ sender: UIButton) {
+//        // Handle button tap here
+//        print("Add button tapped")
+//        
+//        // You can perform actions like adding a new item, presenting a new view controller, etc.
+//    }
+//    
+//    
+//    //    override func viewDidAppear(_ animated: Bool) {
+//    //        super.viewDidAppear(animated)
+//    //
+//    //    }
+//    
+//    private func handleNotAuthenticated() {
+//        // Check auth status
+//        if Auth.auth().currentUser == nil {
+//            // Show log in
+//            let loginVC = LogInFromVideoViewController()
+//            loginVC.modalPresentationStyle = .fullScreen
+//            present(loginVC, animated: false)
+//        }
+//    }
+//    
+//    
+//}
+//
+
+class HomeViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Communities"
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func didTapNewNote() {
         
     }
     
     private func handleNotAuthenticated() {
-        // Check auth status
-        if Auth.auth().currentUser == nil {
-            // Show log in
-            let loginVC = LoginViewController()
-            loginVC.modalPresentationStyle = .fullScreen
-            present(loginVC, animated: false)
+            // Check auth status
+            if Auth.auth().currentUser == nil {
+                // Show log in
+                let loginVC = LogInFromVideoViewController()
+                loginVC.modalPresentationStyle = .fullScreen
+                present(loginVC, animated: false)
+            }
         }
-    }
-
+//
+    
 }
