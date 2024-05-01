@@ -1,0 +1,17 @@
+[
+    {
+        "communityProfileImageName": "pop_icon",
+        "communityName": "John Doe",
+        "sharedBy": "Ishika",
+        "postImageName": "post1",
+        "postDescription": "This is a great post!"
+    },
+    {
+        "communityProfileImageName": "hip_icon",
+        "communityName": "Jane Smith",
+        "sharedBy": "Ishika",
+        "postImageName": "post2",
+        "postDescription": "Check out this amazing photo"
+    }
+    
+]

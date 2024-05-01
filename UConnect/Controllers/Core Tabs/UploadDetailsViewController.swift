@@ -1,9 +1,4 @@
-//
-//  UploadDetailsViewController.swift
-//  UConnect
-//
-//  Created by Vibho Sharma on 30/04/24.
-//
+//upload details
 
 import UIKit
 

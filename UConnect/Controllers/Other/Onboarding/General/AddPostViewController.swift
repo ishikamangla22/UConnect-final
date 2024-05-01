@@ -1,10 +1,3 @@
-//
-//  AddPostViewController.swift
-//  UConnect
-//
-//  Created by Vibho Sharma on 30/04/24.
-//
-
 import UIKit
 import MobileCoreServices
 

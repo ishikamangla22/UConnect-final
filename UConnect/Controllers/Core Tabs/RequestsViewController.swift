@@ -1,10 +1,3 @@
-//
-//  RequestsViewController.swift
-//  UConnect
-//
-//  Created by student on 22/04/24.
-//
-
 import UIKit
 
 class RequestsViewController: UIViewController {
@@ -143,8 +136,7 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if segmentController.selectedSegmentIndex == 1 { 
-             Check if segment index is for uploads
+        if segmentController.selectedSegmentIndex == 1 { // Check if segment index is for uploads
             let uploadDetailsVC = UploadDetailsViewController()
             let selectedUpload = requests[indexPath.row]
             uploadDetailsVC.uploadName = selectedUpload.name

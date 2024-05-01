@@ -1,3 +1,6 @@
+
+  
+
 //
 //  HomeViewController.swift
 //  UConnect
@@ -138,16 +141,25 @@ import UIKit
 //}
 //
 
+import SwiftUI
+
 class HomeViewController: UIViewController  {
 
+    @IBOutlet weak var cardImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Communities"
+        
+        
     }
     
     @IBAction func didTapNewNote() {
         
     }
+    
+    
     
     private func handleNotAuthenticated() {
             // Check auth status
@@ -160,4 +172,34 @@ class HomeViewController: UIViewController  {
         }
 //
     
+    @IBAction func segmentedController(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            
+            // Create a SwiftUI view
+            let postlistView = PostCard()
+            
+            // Wrap the SwiftUI view in a UIHostingController
+            let hostingController = UIHostingController(rootView: postlistView)
+
+            // Add the hosting controller's view as a subview
+            addChild(hostingController)
+            view.addSubview(hostingController.view)
+            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            hostingController.didMove(toParent: self)
+            break
+        case 1:
+            cardImageView.image = UIImage(named: "pop_icon")
+            break
+        case 2:
+            cardImageView.image = UIImage(named: "hip_icon")
+            break
+        default:
+            break
+        }
+    }
 }

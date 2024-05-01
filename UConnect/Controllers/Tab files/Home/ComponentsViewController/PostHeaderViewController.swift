@@ -1,13 +1,13 @@
 //
-//  NoteViewController.swift
+//  PostHeaderViewController.swift
 //  UConnect
 //
-//  Created by student on 30/04/24.
+//  Created by student on 01/05/24.
 //
 
 import UIKit
 
-class NoteViewController: UIViewController {
+class PostHeaderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
