@@ -1,4 +1,3 @@
-//
 //  NewCommunityViewController.swift
 //  UConnect
 //

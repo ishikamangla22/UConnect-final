@@ -1,5 +1,3 @@
-//upload details
-
 import UIKit
 
 class UploadDetailsViewController: UIViewController {

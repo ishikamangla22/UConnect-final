@@ -136,13 +136,13 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if segmentController.selectedSegmentIndex == 1 { // Check if segment index is for uploads
-//            let uploadDetailsVC = UploadDetailsViewController()
-//            let selectedUpload = requests[indexPath.row]
-//            uploadDetailsVC.uploadName = selectedUpload.name
-//            uploadDetailsVC.communityName = selectedUpload.community
-//            navigationController?.pushViewController(uploadDetailsVC, animated: true)
-//        }
+        if segmentController.selectedSegmentIndex == 1 { // Check if segment index is for uploads
+            let uploadDetailsVC = UploadDetailsViewController()
+            let selectedUpload = requests[indexPath.row]
+            uploadDetailsVC.uploadName = selectedUpload.name
+            uploadDetailsVC.communityName = selectedUpload.community
+            navigationController?.pushViewController(uploadDetailsVC, animated: true)
+        }
     }
 }
 

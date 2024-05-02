@@ -146,25 +146,29 @@ private let reuseIdentifier = "Cell"
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var segmentedController: UISegmentedControl!
-   
-
-//    @IBOutlet weak var cardImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Communities"
         
-//        outerCollectionView.delegate = self
-//        outerCollectionView.dataSource = self
-//        
-//        secondCollectionView.delegate = self
-//        secondCollectionView.dataSource = self
+        outerCollectionView.delegate = self
+        outerCollectionView.dataSource = self
+        
+        secondCollectionView.delegate = self
+        secondCollectionView.dataSource = self
+
         
     }
     
     @IBAction func didTapNewNote() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Assuming "Main" is your storyboard name
+        if let addViewController = storyboard.instantiateViewController(withIdentifier: "AddPostViewControllerIdentifier") as? AddPostViewController {
+            // Optionally, configure properties of the AddViewController here
+            
+            // Push the AddViewController onto the navigation stack
+            navigationController?.pushViewController(AddPostViewController, animated: true)
+        }
     }
     
     @IBOutlet weak var outerCollectionView: UICollectionView!
@@ -189,96 +193,76 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
         case 0:
             secondCollectionView.isHidden = true
-//            outerCollectionView.isHidden = false
-//
-//            outerCollectionView.setCollectionViewLayout(generateLayout1(), animated: true)
-//            
-////            outerCollectionView.delegate = self
-////            outerCollectionView.dataSource = self
-//            
-//            
-//            
-//            // Collection View Code
-//            
-//            func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//                return Posts.count
-//            }
-//            
-//            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell" , for: indexPath) as! PostCollectionViewCell
-//                
-//                let post = Posts[indexPath.item]
-//                
-//                cell.communityName.text = post.communityName
-//                cell.sharedBy.text = post.sharedBy
-//                cell.postDescription.text = post.postDescription
-//                
-//                let imageCommunity = UIImage(named: post.communityProfileImageName)
-//                let imagePost = UIImage(named: post.postImageName)
-//                
-//                cell.communityProfileImage.image = imageCommunity
-//                cell.postImage.image = imagePost
-//            
-//                // Configure the cell
-//            
-//                return cell
-//            }
-//            
-//            func generateLayout1() -> UICollectionViewLayout {
-//                
-//                let itemSize = NSCollectionLayoutSize(
-//                    widthDimension: .fractionalWidth(1.0),
-//                    heightDimension: .fractionalHeight(1.0)
-//                )
-//                
-//                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//                
-//                let spacing: CGFloat = 10
-//                
-//                let groupSize = NSCollectionLayoutSize(
-//                    widthDimension: .fractionalWidth(1.0),
-//                    heightDimension: .fractionalHeight(0.5)
-//                )
-//                
-//                let group = NSCollectionLayoutGroup.horizontal(
-//                    layoutSize: groupSize,
-//                    repeatingSubitem: item,
-//                    count: 1
-//                )
-//                
-//                group.contentInsets = NSDirectionalEdgeInsets(
-//                    top: spacing,
-//                    leading: spacing,
-//                    bottom: 0,
-//                    trailing: spacing
-//                )
-//                
-//                let section = NSCollectionLayoutSection(group: group)
-//                
-//                let layout = UICollectionViewCompositionalLayout(section: section)
-//                
-//                return layout
-//                
-//            }
-//            
+            outerCollectionView.isHidden = false
+
+            outerCollectionView.setCollectionViewLayout(generateLayout1(), animated: true)
             
             
-            // Create a SwiftUI view
-//            let postlistView = PostCard()
-//            
-//            // Wrap the SwiftUI view in a UIHostingController
-//            let hostingController = UIHostingController(rootView: postlistView)
-//
-//            // Add the hosting controller's view as a subview
-//            addChild(hostingController)
-//            view.addSubview(hostingController.view)
-//            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-//            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//            hostingController.didMove(toParent: self)
+            // Collection View Code
+            
+            func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+                return Posts.count
+            }
+            
+            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell" , for: indexPath) as! PostCollectionViewCell
+                
+                let post = Posts[indexPath.item]
+                
+                cell.communityName.text = post.communityName
+                cell.sharedBy.text = post.sharedBy
+                cell.postDescription.text = post.postDescription
+                
+                let imageCommunity = UIImage(named: post.communityProfileImageName)
+                let imagePost = UIImage(named: post.postImageName)
+                
+                cell.communityProfileImage.image = imageCommunity
+                cell.postImage.image = imagePost
+            
+                // Configure the cell
+            
+                return cell
+            }
+            
+            func generateLayout1() -> UICollectionViewLayout {
+                
+                let itemSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalHeight(1.0)
+                )
+                
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                let spacing: CGFloat = 10
+                
+                let groupSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalHeight(0.5)
+                )
+                
+                let group = NSCollectionLayoutGroup.horizontal(
+                    layoutSize: groupSize,
+                    repeatingSubitem: item,
+                    count: 1
+                )
+                
+                group.contentInsets = NSDirectionalEdgeInsets(
+                    top: spacing,
+                    leading: spacing,
+                    bottom: 0,
+                    trailing: spacing
+                )
+                
+                let section = NSCollectionLayoutSection(group: group)
+                
+                let layout = UICollectionViewCompositionalLayout(section: section)
+                
+                return layout
+                
+            }
+            
             break
+            
         case 1:
             outerCollectionView.isHidden = true
             secondCollectionView.isHidden = false
@@ -338,14 +322,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 
             }
 
-            
-
-//            cardImageView.image = UIImage(named: "pop_icon")
             break
         case 2:
             outerCollectionView.isHidden = true
             secondCollectionView.isHidden = true
-//            cardImageView.image = UIImage(named: "hip_icon")
             break
         default:
             break
@@ -355,3 +335,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
 }
+
+
+// Create a SwiftUI view
+//            let postlistView = PostCard()
+//
+//            // Wrap the SwiftUI view in a UIHostingController
+//            let hostingController = UIHostingController(rootView: postlistView)
+//
+//            // Add the hosting controller's view as a subview
+//            addChild(hostingController)
+//            view.addSubview(hostingController.view)
+//            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+//            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//            hostingController.didMove(toParent: self)
