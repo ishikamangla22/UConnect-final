@@ -5,12 +5,24 @@
 //  Created by student on 30/04/24.
 //
 
-import SwiftUI
-
+//import SwiftUI
+//
 //struct PostListView: View {
 //    
-//    @ObservedObject var postData = ReadJsonData()
+//     
 //    
+//    var body: some View {
+//        VStack {
+//            List {
+//                PostCard(communityProfileImageName:  communityName: <#T##String#>, sharedBy: <#T##String#>, postImageName: <#T##String#>, postDescription: <#T##String#>, like_count: <#T##String#>)
+//            }
+//        }
+//    }
+    
+//    @ObservedObject var postData = ReadJsonData()
+
+
+
 //    var body: some View {
 //        VStack {
 //            List(postData.posts) { post in

@@ -75,6 +75,10 @@
 		3FA6D8402BE1613B00E4764A /* PostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D83F2BE1613B00E4764A /* PostCard.swift */; };
 		3FA6D8422BE1614900E4764A /* PostCardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D8412BE1614900E4764A /* PostCardHeader.swift */; };
 		3FA6D84E2BE24AF000E4764A /* PostHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D84D2BE24AF000E4764A /* PostHeaderViewController.swift */; };
+		3FA6D8502BE2B17100E4764A /* BasicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D84F2BE2B17000E4764A /* BasicCollectionViewController.swift */; };
+		3FA6D8522BE2B25000E4764A /* BasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D8512BE2B25000E4764A /* BasicCollectionViewCell.swift */; };
+		3FA6D8542BE2BF0100E4764A /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D8532BE2BF0100E4764A /* PostCollectionViewCell.swift */; };
+		3FA6D8562BE2BF2200E4764A /* PostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6D8552BE2BF2200E4764A /* PostCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +126,10 @@
 		3FA6D8412BE1614900E4764A /* PostCardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardHeader.swift; sourceTree = "<group>"; };
 		3FA6D8492BE225FD00E4764A /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 		3FA6D84D2BE24AF000E4764A /* PostHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderViewController.swift; sourceTree = "<group>"; };
+		3FA6D84F2BE2B17000E4764A /* BasicCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewController.swift; sourceTree = "<group>"; };
+		3FA6D8512BE2B25000E4764A /* BasicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FA6D8532BE2BF0100E4764A /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FA6D8552BE2BF2200E4764A /* PostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +202,8 @@
 			children = (
 				3FA6D84C2BE249ED00E4764A /* ComponentsViewController */,
 				3FA6D8322BE1526900E4764A /* Components */,
+				3FA6D8532BE2BF0100E4764A /* PostCollectionViewCell.swift */,
+				3FA6D8552BE2BF2200E4764A /* PostCollectionViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -320,6 +330,8 @@
 				3F2EF8F52BD6C3E2008E5EA9 /* RegistrationViewController.swift */,
 				3F139EF02BD8222600C064D7 /* LogInFromVideoViewController.swift */,
 				3F139EE92BD813E700C064D7 /* General */,
+				3FA6D84F2BE2B17000E4764A /* BasicCollectionViewController.swift */,
+				3FA6D8512BE2B25000E4764A /* BasicCollectionViewCell.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -485,8 +497,10 @@
 				3F48BB8A2BDA7010004ADC33 /* CommunityMessage.swift in Sources */,
 				3F2EF9042BD6C57C008E5EA9 /* PostEditorViewController.swift in Sources */,
 				3F9CB8B92BD0472A002D2355 /* LightGrayPlaceholderTextField.swift in Sources */,
+				3FA6D8562BE2BF2200E4764A /* PostCollectionViewController.swift in Sources */,
 				3F2EF8F62BD6C3E2008E5EA9 /* RegistrationViewController.swift in Sources */,
 				3F83BAB92BCF8C9900A9DBD2 /* AppDelegate.swift in Sources */,
+				3FA6D8502BE2B17100E4764A /* BasicCollectionViewController.swift in Sources */,
 				3F2EF8FE2BD6C4CE008E5EA9 /* ListViewController.swift in Sources */,
 				3F139EED2BD8163C00C064D7 /* AuthManager.swift in Sources */,
 				3F83BABB2BCF8C9900A9DBD2 /* SceneDelegate.swift in Sources */,
@@ -495,6 +509,7 @@
 				3FA6D8342BE1529E00E4764A /* PostListView.swift in Sources */,
 				3F2EF8F12BD6BEE8008E5EA9 /* ProfileViewController.swift in Sources */,
 				3F48BB942BDA70FA004ADC33 /* UploadRequest.swift in Sources */,
+				3FA6D8542BE2BF0100E4764A /* PostCollectionViewCell.swift in Sources */,
 				3F48BB8C2BDA7053004ADC33 /* Community.swift in Sources */,
 				3FA6D8422BE1614900E4764A /* PostCardHeader.swift in Sources */,
 				3F48BB922BDA70EE004ADC33 /* MemberRequest.swift in Sources */,
@@ -509,6 +524,7 @@
 				3F2EF8FC2BD6C4A8008E5EA9 /* SettingsViewController.swift in Sources */,
 				3F139EF12BD8222600C064D7 /* LogInFromVideoViewController.swift in Sources */,
 				3F48BB802BDA6B0D004ADC33 /* User.swift in Sources */,
+				3FA6D8522BE2B25000E4764A /* BasicCollectionViewCell.swift in Sources */,
 				3F2EF8ED2BD6BEC9008E5EA9 /* NotificationsViewController.swift in Sources */,
 				3F2EF9022BD6C516008E5EA9 /* SearchResultViewController.swift in Sources */,
 				3F2EF8F82BD6C453008E5EA9 /* PostViewController.swift in Sources */,

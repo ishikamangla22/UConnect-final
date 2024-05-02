@@ -141,23 +141,28 @@ import UIKit
 //}
 //
 
-import SwiftUI
+private let reuseIdentifier = "Cell"
 
-class HomeViewController: UIViewController  {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+   
 
-    @IBOutlet weak var cardImageView: UIImageView!
+//    @IBOutlet weak var cardImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Communities"
         
+        outerCollectionView.delegate = self
+        outerCollectionView.dataSource = self
         
     }
     
     @IBAction func didTapNewNote() {
         
     }
+    
+    @IBOutlet weak var outerCollectionView: UICollectionView!
     
     
     
@@ -173,33 +178,109 @@ class HomeViewController: UIViewController  {
 //
     
     @IBAction func segmentedController(_ sender: UISegmentedControl) {
+        
         switch sender.selectedSegmentIndex {
+            
         case 0:
+            outerCollectionView.isHidden = false
+
+            outerCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
+            
+            outerCollectionView.delegate = self
+            outerCollectionView.dataSource = self
+            
+            
             
             // Create a SwiftUI view
-            let postlistView = PostCard()
-            
-            // Wrap the SwiftUI view in a UIHostingController
-            let hostingController = UIHostingController(rootView: postlistView)
-
-            // Add the hosting controller's view as a subview
-            addChild(hostingController)
-            view.addSubview(hostingController.view)
-            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            hostingController.didMove(toParent: self)
+//            let postlistView = PostCard()
+//            
+//            // Wrap the SwiftUI view in a UIHostingController
+//            let hostingController = UIHostingController(rootView: postlistView)
+//
+//            // Add the hosting controller's view as a subview
+//            addChild(hostingController)
+//            view.addSubview(hostingController.view)
+//            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+//            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//            hostingController.didMove(toParent: self)
             break
         case 1:
-            cardImageView.image = UIImage(named: "pop_icon")
+            outerCollectionView.isHidden = true
+
+//            cardImageView.image = UIImage(named: "pop_icon")
             break
         case 2:
-            cardImageView.image = UIImage(named: "hip_icon")
+            outerCollectionView.isHidden = true
+
+//            cardImageView.image = UIImage(named: "hip_icon")
             break
         default:
             break
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Posts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell" , for: indexPath) as! PostCollectionViewCell
+        
+        let post = Posts[indexPath.item]
+        
+        cell.communityName.text = post.communityName
+        cell.sharedBy.text = post.sharedBy
+        cell.postDescription.text = post.postDescription
+        
+        let imageCommunity = UIImage(named: post.communityProfileImageName)
+        let imagePost = UIImage(named: post.postImageName)
+        
+        cell.communityProfileImage.image = imageCommunity
+        cell.postImage.image = imagePost
+    
+        // Configure the cell
+    
+        return cell
+    }
+    
+    private func generateLayout() -> UICollectionViewLayout {
+        
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let spacing: CGFloat = 10
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(0.5)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 1
+        )
+        
+        group.contentInsets = NSDirectionalEdgeInsets(
+            top: spacing,
+            leading: spacing,
+            bottom: 0,
+            trailing: spacing
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
+        
+    }
+    
 }
