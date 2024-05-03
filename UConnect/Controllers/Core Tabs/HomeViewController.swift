@@ -1,6 +1,3 @@
-
-  
-
 //
 //  HomeViewController.swift
 //  UConnect
@@ -352,13 +349,15 @@ import UIKit
 //            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 //            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 //            hostingController.didMove(toParent: self)
+
 private let reuseIdentifier = "Cell"
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var segmentedController: UISegmentedControl!
     @IBOutlet weak var outerCollectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
+    @IBOutlet weak var TableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -370,7 +369,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         secondCollectionView.delegate = self
         secondCollectionView.dataSource = self
         
+        TableView.delegate = self
+        TableView.dataSource = self
+        
         handleNotAuthenticated()
+        
     }
     
     @IBAction func didTapNewNote() {
@@ -393,14 +396,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         case 0:
             secondCollectionView.isHidden = true
             outerCollectionView.isHidden = false
+            TableView.isHidden = true
             outerCollectionView.setCollectionViewLayout(generateLayout1(), animated: true)
         case 1:
             outerCollectionView.isHidden = true
             secondCollectionView.isHidden = false
+            TableView.isHidden = true
             secondCollectionView.setCollectionViewLayout(generateLayout2(), animated: true)
         case 2:
             outerCollectionView.isHidden = true
             secondCollectionView.isHidden = true
+            TableView.isHidden = false
         default:
             break
         }
@@ -413,6 +419,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return Interests.count
         }
         return 0
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return communityRequests.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -444,6 +458,36 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
              return cell
         }
         fatalError("Unexpected collection view")
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RequestCell", for: indexPath) as! communityRequestTableViewCell
+        
+        let request = communityRequests[indexPath.row]
+        
+        let communityProfileImage = UIImage(named: request.communityProfileImageName)
+        
+        
+        cell.communityProfileImageName.image = communityProfileImage
+        
+        
+        cell.communityName.text = request.communityName
+        cell.requestStatus.text = request.requestStatus
+        
+        switch request.requestStatus {
+            case "ACCEPTED":
+                cell.requestStatus.textColor = UIColor.green
+            case "REJECTED":
+                cell.requestStatus.textColor = UIColor.red
+            case "PENDING":
+                cell.requestStatus.textColor = UIColor.gray
+            default:
+                cell.requestStatus.textColor = UIColor.black // or any other default color you prefer
+            }
+        
+        return cell
+        
     }
     
     func generateLayout1() -> UICollectionViewLayout {
@@ -527,7 +571,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 widthDimension: .fractionalWidth(0.5), // Two items in a row, so 0.5 for each item
                 heightDimension: .fractionalHeight(1.0)
             )
-            
+        
+//        secondCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5) // Adjust insets as needed
             
@@ -546,4 +593,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             return layout
     }
+    
+    // Table View
+    
+    
+    
 }

@@ -40,7 +40,7 @@ class AddPostViewController: UIViewController {
         view.addSubview(newCommunityCircle)
 
         // Arrow Icon
-        let arrowImageView = UIImageView(image: UIImage(systemName: "arrow.right"))
+        let arrowImageView = UIImageView(image: UIImage(systemName: "chevron.right"))
         arrowImageView.tintColor = .white
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(arrowImageView)
