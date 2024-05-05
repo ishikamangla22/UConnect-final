@@ -444,6 +444,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
              
              cell.communityProfileImage.image = imageCommunity
              cell.postImage.image = imagePost
+            cell.likes.text = post.like_count
          
              // Configure the cell
          
