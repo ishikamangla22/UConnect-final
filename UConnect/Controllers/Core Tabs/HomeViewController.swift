@@ -372,8 +372,39 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         TableView.delegate = self
         TableView.dataSource = self
         
+        segmentedController.selectedSegmentIndex = 0
+        
+        updateView()
+        
         handleNotAuthenticated()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        segmentedController.selectedSegmentIndex = 0
+        updateView()
+        
+    }
+    
+    func updateView() {
+        switch segmentedController.selectedSegmentIndex {
+        case 0:
+            secondCollectionView.isHidden = true
+            outerCollectionView.isHidden = false
+            TableView.isHidden = true
+            outerCollectionView.setCollectionViewLayout(generateLayout1(), animated: true)
+        case 1:
+            outerCollectionView.isHidden = true
+            secondCollectionView.isHidden = false
+            TableView.isHidden = true
+            secondCollectionView.setCollectionViewLayout(generateLayout2(), animated: true)
+        case 2:
+            outerCollectionView.isHidden = true
+            secondCollectionView.isHidden = true
+            TableView.isHidden = false
+        default:
+            break
+        }
     }
     
     @IBAction func didTapNewNote() {
@@ -392,24 +423,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func segmentedController(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            secondCollectionView.isHidden = true
-            outerCollectionView.isHidden = false
-            TableView.isHidden = true
-            outerCollectionView.setCollectionViewLayout(generateLayout1(), animated: true)
-        case 1:
-            outerCollectionView.isHidden = true
-            secondCollectionView.isHidden = false
-            TableView.isHidden = true
-            secondCollectionView.setCollectionViewLayout(generateLayout2(), animated: true)
-        case 2:
-            outerCollectionView.isHidden = true
-            secondCollectionView.isHidden = true
-            TableView.isHidden = false
-        default:
-            break
-        }
+        updateView()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

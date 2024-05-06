@@ -12,7 +12,14 @@ class RequestsViewController: UIViewController {
         view.backgroundColor = UIColor(named: "Background")
         setupUI()
         loadRequests() // Load initial requests
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        segmentController.selectedSegmentIndex = 0
+        loadRequests()
+    }
+    
     
     
 
@@ -54,6 +61,8 @@ class RequestsViewController: UIViewController {
         segmentController.setWidth(view.bounds.width * 0.4, forSegmentAt: 0) // Set width to 40% of screen width
         segmentController.setWidth(view.bounds.width * 0.4, forSegmentAt: 1) // Set width to 40% of screen width
         view.addSubview(segmentController)
+        
+        segmentController.selectedSegmentIndex = 0
 
         // Table View
         tableView = UITableView()
