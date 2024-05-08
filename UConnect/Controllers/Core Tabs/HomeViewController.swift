@@ -383,6 +383,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         segmentedController.selectedSegmentIndex = 0
         updateView()
+        outerCollectionView.reloadData()
         
     }
     
@@ -428,9 +429,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == outerCollectionView {
-            return Posts.count
+            return dataModelofPosts.getPosts().count //PostDataManager.getInstance().getPosts().count
         } else if collectionView == secondCollectionView {
-            return Interests.count
+            return InterestDataManager.getInstance().fetchAllInterests().count
         }
         return 0
     }
@@ -440,14 +441,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communityRequests.count
+        return CommunityRequestDataManager.shared.fetchAllCommunityRequests().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == outerCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell" , for: indexPath) as! PostCollectionViewCell
              
-             let post = Posts[indexPath.item]
+            let post = dataModelofPosts.getPosts()[indexPath.item]
              
              cell.communityName.text = post.communityName
              cell.sharedBy.text = post.sharedBy
@@ -458,7 +459,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
              
              cell.communityProfileImage.image = imageCommunity
              cell.postImage.image = imagePost
-            cell.likes.text = post.like_count
+            cell.likes.text = post.likeCount
          
              // Configure the cell
          
@@ -466,8 +467,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else if collectionView == secondCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell" , for: indexPath) as! InterestsCollectionViewCell
              
-             cell.interestName.text = Interests[indexPath.item]
-             cell.interestImage.image = interestsImage[indexPath.item]
+            cell.interestName.text = InterestDataManager.shared.fetchAllInterests()[indexPath.item].name
+            cell.interestImage.image = InterestDataManager.shared.fetchAllInterests()[indexPath.item].image
              // Configure the cell
          
              return cell
@@ -479,7 +480,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RequestCell", for: indexPath) as! communityRequestTableViewCell
         
-        let request = communityRequests[indexPath.row]
+        let request = CommunityRequestDataManager.shared.fetchAllCommunityRequests()[indexPath.row]
         
         let communityProfileImage = UIImage(named: request.communityProfileImageName)
         

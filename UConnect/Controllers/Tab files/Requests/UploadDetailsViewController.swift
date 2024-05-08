@@ -1,7 +1,7 @@
 import UIKit
 
 class UploadDetailsViewController: UIViewController {
-
+    
     var titleLabel: UILabel!
     var uploaderCircleView: UIView!
     var uploaderNameLabel: UILabel!
@@ -17,9 +17,17 @@ class UploadDetailsViewController: UIViewController {
     var image: UIImage?
     var descriptionText: String?
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .black
+        
+        // Assigning values to variables
+        uploadName = "Sita"
+        communityName = "Pop Dancers"
+        descriptionText = "Glad to share our latest performance on the occasion of Women's Day. Kindly do join us."
+        
         setupUI()
         setupContent()
     }
@@ -62,7 +70,7 @@ class UploadDetailsViewController: UIViewController {
         // Image View
         imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "welcome") // Replace placeholder with "welcome" image
+        imageView.image = UIImage(named: "pop5") // Replace placeholder with "welcome" image
         view.addSubview(imageView)
 
         // Description Label
@@ -111,7 +119,7 @@ class UploadDetailsViewController: UIViewController {
             uploaderCircleView.widthAnchor.constraint(equalToConstant: 40),
             uploaderCircleView.heightAnchor.constraint(equalToConstant: 40),
 
-            // Uploader Name Label Constraints
+            // Uploader Name Label ConstraintsPosdddddd
             uploaderNameLabel.centerYAnchor.constraint(equalTo: uploaderCircleView.centerYAnchor),
             uploaderNameLabel.leadingAnchor.constraint(equalTo: uploaderCircleView.trailingAnchor, constant: 10),
 
@@ -152,11 +160,17 @@ class UploadDetailsViewController: UIViewController {
 
     private func setupContent() {
         uploaderNameLabel.text = uploadName
-        communityLabel.text = "in \(communityName ?? "")"
+        communityLabel.text = communityName ?? ""
         descriptionLabel.text = descriptionText ?? "No description available"
     }
 
     @objc func approveButtonTapped() {
+        
+        dataModelofPosts.addPost(post: PostItem(communityProfileImageName: "pop_dancers", communityName: communityName ?? "", sharedBy: uploadName ?? "", postImageName: "pop5", postDescription: descriptionText ?? "No description available", likeCount: "4"))
+        if let tabBarController = self.tabBarController {
+            tabBarController.selectedIndex = 0
+        }
+        
         // Handle approve button tapped
     }
 

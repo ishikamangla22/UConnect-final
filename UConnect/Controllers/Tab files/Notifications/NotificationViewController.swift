@@ -51,11 +51,11 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return notifications.count
+        return notifications.count
         }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            let sectionKeys = Array(notifications.keys)
+//            let sectionKeys = Array(notifications.keys)
             let sectionKey = sectionKeys[section]
             return notifications[sectionKey]?.count ?? 0
         }
@@ -63,7 +63,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NotificationTableViewCell
             
-            let sectionKeys = Array(notifications.keys)
+//            let sectionKeys = Array(notifications.keys)
             let sectionKey = sectionKeys[indexPath.section]
             if let notification = notifications[sectionKey]?[indexPath.row] {
                 cell.communityName?.text = notification.communityName

@@ -115,7 +115,7 @@ class PopDancersPageViewController: UIViewController, UICollectionViewDelegate, 
     
     func updateLabelColor() {
         // Update text color based on interface style
-        coolerLabel.textColor = traitCollection.userInterfaceStyle == .dark ? .white : .black
+//        coolerLabel.textColor = traitCollection.userInterfaceStyle == .dark ? .white : .black
     }
     
     // MARK: - Button Action
@@ -134,7 +134,7 @@ class PopDancersPageViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popDancersposts.count
+        return popDancersPosts.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -145,7 +145,7 @@ class PopDancersPageViewController: UIViewController, UICollectionViewDelegate, 
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "popDancersPost" , for: indexPath) as! PopDancersPostCollectionViewCell
         
-        let post = popDancersposts[indexPath.item]
+        let post = popDancersPosts[indexPath.item]
         
         let imagePost = UIImage(named: post.post)
         

@@ -24,7 +24,9 @@ class RequestsViewController: UIViewController {
     
 
     private func loadRequests() {
+        
         // Populate requests array with member requests data
+        
         requests = [
             Request(name: "Vibho", community: "GeekyGods"),
             Request(name: "Ishika", community: "C2S2 Custody"),
@@ -32,7 +34,9 @@ class RequestsViewController: UIViewController {
             Request(name: "Devanshu", community: "Motorcyclists"),
             // Add more member requests data as needed
         ]
+        
         tableView.reloadData()
+        
     }
     
     private func loadUploadRequests() {
@@ -58,8 +62,8 @@ class RequestsViewController: UIViewController {
         segmentController.tintColor = UIColor(named: "SegmentControlColor")
         segmentController.selectedSegmentTintColor = UIColor(named: "SegmentControlSelectedColor")
         segmentController.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-        segmentController.setWidth(view.bounds.width * 0.4, forSegmentAt: 0) // Set width to 40% of screen width
-        segmentController.setWidth(view.bounds.width * 0.4, forSegmentAt: 1) // Set width to 40% of screen width
+        segmentController.setWidth(view.bounds.width * 0.5, forSegmentAt: 0) // Set width to 40% of screen width
+        segmentController.setWidth(view.bounds.width * 0.5, forSegmentAt: 1) // Set width to 40% of screen width
         view.addSubview(segmentController)
         
         segmentController.selectedSegmentIndex = 0
@@ -72,11 +76,13 @@ class RequestsViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(RequestTableViewCell.self, forCellReuseIdentifier: "RequestCell")
         view.addSubview(tableView)
+        
 
         // Constraints
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         segmentController.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
 
         NSLayoutConstraint.activate([
             // Title Label Constraints
@@ -92,8 +98,10 @@ class RequestsViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
+        
         // Add a valueChanged event for the segmented control
         segmentController.addTarget(self, action: #selector(segmentValueChanged(_:)), for: .valueChanged)
+        
     }
 
     // Method to handle segmented control value change
@@ -110,6 +118,7 @@ class RequestsViewController: UIViewController {
         }
     }
 }
+
 
 extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,16 +153,31 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if segmentController.selectedSegmentIndex == 1 { // Check if segment index is for uploads
+        if segmentController.selectedSegmentIndex == 1 {
+            //Check if segment index is for uploads
             let uploadDetailsVC = UploadDetailsViewController()
             let selectedUpload = requests[indexPath.row]
             uploadDetailsVC.uploadName = selectedUpload.name
             uploadDetailsVC.communityName = selectedUpload.community
             navigationController?.pushViewController(uploadDetailsVC, animated: true)
+            
+//            // Instantiate the UploadViewController
+//            let uploadViewController = UploadsViewController()
+//            // Check if the current view controller is embedded in a navigation controller
+//            if let navigationController = navigationController {
+//                // Push the UploadViewController onto the navigation stack
+//                navigationController.pushViewController(uploadViewController, animated: true)
+//            }
+            
+            
+            
         }
     }
+    
 }
+
 
 class RequestTableViewCell: UITableViewCell {
     var profileImageView: UIImageView!
@@ -170,13 +194,15 @@ class RequestTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     private func setupUI() {
+        
         // Profile Image View
+        
         profileImageView = UIImageView()
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 20 // Make it circular
@@ -188,11 +214,13 @@ class RequestTableViewCell: UITableViewCell {
         nameLabel = UILabel()
         nameLabel.textColor = UIColor(named: "DarkPink") // Change to dark pink color
         contentView.addSubview(nameLabel)
+        
 
         // Community Label
         communityLabel = UILabel()
         communityLabel.textColor = UIColor.gray // Set color to gray
         contentView.addSubview(communityLabel)
+        
 
         // Accept Button
         acceptButton = UIButton()

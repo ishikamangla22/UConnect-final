@@ -4,37 +4,45 @@
 //
 //  Created by student on 05/05/24.
 //
-
 import Foundation
 
-struct popDancersPosts{
+// Struct representing an individual post
+struct popDancersPost {
     var post: String
 }
 
-let post1 = popDancersPosts(post: "pop1")
-let post2 = popDancersPosts(post: "pop2")
-let post3 = popDancersPosts(post: "pop3")
-let post4 = popDancersPosts(post: "pop4")
-let post5 = popDancersPosts(post: "pop5")
-let post6 = popDancersPosts(post: "pop6")
-let post7 = popDancersPosts(post: "pop7")
-let post8 = popDancersPosts(post: "pop8")
-let post9 = popDancersPosts(post: "pop9")
-let post10 = popDancersPosts(post: "pop10")
-let post11 = popDancersPosts(post: "pop11")
-let post12 = popDancersPosts(post: "pop12")
+// Singleton class representing the Post data model
+class popDancersPostDataManager {
+    static let shared = popDancersPostDataManager() // Singleton instance
+    
+    // Static property holding posts
+    private var popDancersPosts: [popDancersPost] = [
+        popDancersPost(post: "pop1"),
+        popDancersPost(post: "pop2"),
+        popDancersPost(post: "pop3"),
+        popDancersPost(post: "pop4"),
+        popDancersPost(post: "pop5"),
+        popDancersPost(post: "pop6"),
+        popDancersPost(post: "pop7"),
+        popDancersPost(post: "pop8"),
+        popDancersPost(post: "pop9"),
+        popDancersPost(post: "pop10"),
+        popDancersPost(post: "pop11"),
+        popDancersPost(post: "pop12")
+    ]
+    
+    private init() {
+        // Initialize is private to prevent outside initialization
+    }
+    
+    // Function to fetch all posts
+    func fetchAllPosts() -> [popDancersPost] {
+        return popDancersPosts
+    }
+    
+    // Add more functions as needed, e.g., to filter posts, add new posts, etc.
+}
 
-var popDancersposts: [popDancersPosts] = [
-    post1,
-    post2,
-    post3,
-    post4,
-    post5,
-    post6,
-    post7,
-    post8,
-    post9,
-    post10,
-    post11,
-    post12
-]
+// Accessing the singleton instance and using it
+let postDataManager = popDancersPostDataManager.shared
+let popDancersPosts = postDataManager.fetchAllPosts()

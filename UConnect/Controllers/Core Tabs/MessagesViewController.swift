@@ -6,8 +6,19 @@
 //
 
 import UIKit
+//import StreamChat
+//import StreamChatUI
+//
+//// Display the channel list screen
+//class DemoChannelList: ChatChannelListVC {}
+
+//protocol MessageTabDelegate: AnyObject {
+//    func messageTabSelected()
+//}
 
 class MessagesViewController: UIViewController {
+    
+//    weak var delegate: MessageTabDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,4 +106,9 @@ class MessagesViewController: UIViewController {
         // Present GroupChatViewController
         navigationController?.pushViewController(groupChatVC, animated: true)
     }
+    
+//    // Call this method when the tab is selected
+//    func tabSelected() {
+//        delegate?.messageTabSelected()
+//    }
 }

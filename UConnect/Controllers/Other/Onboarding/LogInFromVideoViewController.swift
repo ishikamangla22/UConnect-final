@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import FirebaseAuth
 
 struct Constants {
     static let cornerRadius: CGFloat = 8.0
@@ -215,36 +216,56 @@ class LogInFromVideoViewController: UIViewController {
             //username
             username = usernameEmail
         }
-        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in DispatchQueue.main.async {
-            if success{
-                //user logged in
-                self.dismiss(animated: true, completion: nil)
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-                guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarControllerID") as? UITabBarController else {
-                    print("Error: Could not instantiate TabBarController from storyboard.")
-                    return // Exit the function if instantiation fails
-                }
-
-                // Set modalPresentationStyle to fullScreen
-                tabBarController.modalPresentationStyle = .fullScreen
-
-                // Optional: Set the selected tab index (if desired)
-                // tabBarController.selectedIndex = 1 // Set tab at index 1 to be selected
-
-                // Present the tab bar controller from the current view controller
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
+            DispatchQueue.main.async {
+                if success {
+                    // User logged in successfully
+                    // Check if a user is currently signed in
+                    if let user = Auth.auth().currentUser {
+                        // User is signed in, retrieve the UID
+                        let userId = user.uid
+                        // Now you can use userId as the user's unique identifier
+                        print("User UID: \(userId)")
+                        
+                        // User is signed in, retrieve the ID token
+                        user.getIDToken(completion: { (token, error) in
+                            if let error = error {
+                                print("Error retrieving ID token: \(error.localizedDescription)")
+                                // Handle error
+                            } else if let token = token {
+                                // Token successfully retrieved, use it as needed
+                                print("ID token: \(token)")
+                                // Proceed with using the token for authentication or other purposes
+                            }
+                        })
+                    } else {
+                        // No user is currently signed in
+                        print("No user signed in")
+                        // Handle scenario where no user is signed in
+                    }
+                    
+                    // Dismiss the current view controller
+                    self.dismiss(animated: true, completion: nil)
+                    
+                    // Instantiate the tab bar controller from the storyboard
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarControllerID") as? UITabBarController else {
+                        print("Error: Could not instantiate TabBarController from storyboard.")
+                        return // Exit the function if instantiation fails
+                    }
+                    
+                    // Set modalPresentationStyle to fullScreen
+                    tabBarController.modalPresentationStyle = .fullScreen
+                    
+                    // Present the tab bar controller from the current view controller
                     self.present(tabBarController, animated: true, completion: nil)
+                } else {
+                    // Login error occurred
+                    let alert = UIAlertController(title: "Log In Error", message: "We were unable to log you in", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
                 }
             }
-            else {
-                // error occured
-                let alert = UIAlertController(title: "Log In Error", message: "We were unable to log you in ", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-                self.present(alert,animated: true)
-            }
-        }
         }
     }
     

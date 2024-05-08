@@ -133,6 +133,25 @@ class NewPostDetailsViewController: UIViewController {
     
     @objc private func shareButtonTapped() {
         // Handle share button tap
+        // Create and present an alert
+        let alertController = UIAlertController(title: "Shared to Admin", message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            // Dismiss the alert and navigate back to the HomeViewController
+            self.dismiss(animated: true) {
+                // Loop through the navigation stack to find the HomeViewController
+                for viewController in self.navigationController?.viewControllers ?? [] {
+                    if let homeViewController = viewController as? HomeViewController {
+                        // If found, pop back to the HomeViewController
+                        self.navigationController?.popToViewController(homeViewController, animated: true)
+                        return
+                    }
+                }
+                
+                // If HomeViewController is not found in the navigation stack, print an error message
+                print("HomeViewController not found in navigation stack")
+            }
+        }))
+        present(alertController, animated: true, completion: nil)
     }
 
 }

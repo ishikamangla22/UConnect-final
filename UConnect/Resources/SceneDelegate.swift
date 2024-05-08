@@ -7,6 +7,43 @@
 
 import UIKit
 
+
+// SceneDelegate.swift
+
+//func scene(
+//    _ scene: UIScene,
+//    willConnectTo session: UISceneSession,
+//    options connectionOptions: UIScene.ConnectionOptions
+//) {
+//        // Define the API key
+//    let config = ChatClientConfig(apiKey: .init("avsqe6dvrr85"))
+//
+//    /// user id and token for the user
+//    let userId = "tutorial-droid"
+//    let token = Token
+//    /// Step 1: Create an instance of ChatClient and share it using the singleton
+//    ChatClient.shared = ChatClient(config: config)
+//
+//    /// Step 2: User Authentication (Connect the user to chat).
+//    ChatClient.shared.connectUser(
+//        userInfo: UserInfo(
+//            id: userId,
+//            name: "Tutorial Droid",
+//            imageURL: URL(string: "https://bit.ly/2TIt8NR")
+//        ),
+//        token: token
+//    )
+//
+//    /// Step 3: Create the ChannelList view controller
+//    let channelList = DemoChannelList()
+//    let query = ChannelListQuery(filter: .containMembers(userIds: [userId]))
+//    channelList.controller = ChatClient.shared.channelListController(query: query)
+//
+//    /// Step 4: Similar to embedding with a navigation controller using Storyboard
+//    window?.rootViewController = UINavigationController(rootViewController: channelList)
+//}
+
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
