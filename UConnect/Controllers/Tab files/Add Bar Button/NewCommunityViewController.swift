@@ -47,7 +47,7 @@ class NewCommunityViewController: UIViewController, UIImagePickerControllerDeleg
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
-
+        
         // Add Photo Button
         addPhotoButton = UIButton(type: .system)
         addPhotoButton.setTitle("Add Photo", for: .normal)

@@ -28,10 +28,10 @@ class RequestsViewController: UIViewController {
         // Populate requests array with member requests data
         
         requests = [
-            Request(name: "Vibho", community: "GeekyGods"),
-            Request(name: "Ishika", community: "C2S2 Custody"),
-            Request(name: "Sharan", community: "FoosBall"),
-            Request(name: "Devanshu", community: "Motorcyclists"),
+            Request(name: "Raman", community: "Pop Dancers"),
+            Request(name: "Ishika", community: "Pop Dancers"),
+            Request(name: "Sharan", community: "Pop Dancers"),
+            Request(name: "Devanshu", community: "Pop Dancers"),
             // Add more member requests data as needed
         ]
         
@@ -42,8 +42,8 @@ class RequestsViewController: UIViewController {
     private func loadUploadRequests() {
         // Populate requests array with upload requests data
         requests = [
-            Request(name: "Upload 1", community: "Community A"),
-            Request(name: "Upload 2", community: "Community B"),
+            Request(name: "Sita", community: "Pop Dancers"),
+//            Request(name: "Upload 2", community: "Community B"),
             // Add more upload requests data as needed
         ]
         tableView.reloadData()

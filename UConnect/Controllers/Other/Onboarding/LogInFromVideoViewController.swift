@@ -15,7 +15,8 @@ struct Constants {
 
 private let usernameEmailField: UITextField = {
     let field = UITextField()
-    field.placeholder = "Username or Email..."
+   // field.placeholder = "Username or Email..."
+    field.text = "ishikamangla2@gmail.com"
     field.returnKeyType = .next
     field.leftViewMode = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -32,7 +33,8 @@ private let usernameEmailField: UITextField = {
 private let passwordField: UITextField = {
     let field = UITextField()
     field.isSecureTextEntry = true
-    field.placeholder = "Password..."
+  //  field.placeholder = "Password..."
+    field.text = "ishika1234"
     field.returnKeyType = .continue
     field.leftViewMode = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))

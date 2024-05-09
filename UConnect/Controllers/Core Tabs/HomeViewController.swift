@@ -378,6 +378,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         handleNotAuthenticated()
         
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "technology" {
+            // Make sure the destination view controller is TopCommunityViewController
+            if let topCommunityVC = segue.destination as? TopCommunityViewController {
+                
+                segue.destination.navigationItem.title = "Technology"
+                // Customize or pass data to TopCommunityViewController if needed
+                // For example:
+                // topCommunityVC.someProperty = someValue
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

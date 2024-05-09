@@ -24,9 +24,9 @@ class UploadDetailsViewController: UIViewController {
         view.backgroundColor = .black
         
         // Assigning values to variables
-        uploadName = "Sita"
+        uploadName = "Shared By: Sita"
         communityName = "Pop Dancers"
-        descriptionText = "Glad to share our latest performance on the occasion of Women's Day. Kindly do join us."
+        descriptionText = "Occasion of Women's Day."
         
         setupUI()
         setupContent()
@@ -166,7 +166,7 @@ class UploadDetailsViewController: UIViewController {
 
     @objc func approveButtonTapped() {
         
-        dataModelofPosts.addPost(post: PostItem(communityProfileImageName: "pop_dancers", communityName: communityName ?? "", sharedBy: uploadName ?? "", postImageName: "pop5", postDescription: descriptionText ?? "No description available", likeCount: "4"))
+        dataModelofPosts.addPost(post: PostItem(communityProfileImageName: "pop_icon", communityName: communityName ?? "", sharedBy: uploadName ?? "", postImageName: "pop5", postDescription: descriptionText ?? "No description available", likeCount: "4"))
         if let tabBarController = self.tabBarController {
             tabBarController.selectedIndex = 0
         }
